@@ -33,10 +33,10 @@ async def login(user_request: UserAuth) -> RefreshToken:
         )
 
 
-@auth_router.post("/refresh")
+@auth_router.post("/refresh", response_model=AccessToken)
 async def refresh(
     auth: JwtAuthorizationCredentials = Security(refresh_security),
 ) -> AccessToken:
     """Endpoint to refresh access token."""
     access_token = access_security.create_refresh_token(subject=auth.subject)
-    return access_token
+    return {"access_token": access_token}
