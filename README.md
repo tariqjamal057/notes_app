@@ -25,6 +25,7 @@ Notes App is a full-stack web application that allows users to create, read, upd
 ### Backend
 - FastAPI
 - MongoDB
+- Beanie ORM
 - PyJWT
 - Pydantic
 - Motor (Async MongoDB Driver)
